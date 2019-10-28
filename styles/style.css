@@ -1,9 +1,16 @@
+:root {
+    --bg-color: #ffffff;
+    --dark-font-color: #581555;
+    --light-font-color: #ffffff;
+    --button-color: #D03EC9;
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: white;
+    background-color: var(--bg-color);
     font-size: 15px;
-    color: #581555;
-    width: 100vw;
+    color: var(--dark-font-color);
+    width: 100%;
     line-height: 1.6em;
 }
 
@@ -18,13 +25,13 @@ header {
 }
 
 @keyframes heading {
-    0% {top: -300px}
+    0% {top: -400px}
     100% {top: 0}
 }
 
-#waveTop2, #waveTop1 {
+#waveTop, #waveBottom {
     animation-name: waveOpacity;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-in-out;
 }
 
@@ -33,14 +40,14 @@ header {
     100% {opacity: 1}
 }
 
-#waveTop2 {
+#waveTop {
     position: absolute;
     width: 23em;
     right: 0;
     top: 73%;
 }
 
-#waveTop1 {
+#waveBottom {
     position: absolute;
     width: 40em;
     right: 0;
@@ -54,19 +61,19 @@ header {
 
 ul a {
     text-decoration: none;
-    color: #581555;
+    color: var(--dark-font-color);
 }
 
 h1 {
     font-size: 7.6em;
-    color: white;
+    color: var(--light-font-color);
     text-align: center;
     margin-bottom: 0;
 }
 
 h2 {
     font-size: 2em;
-    color: white;
+    color: var(--light-font-color);
     text-align: center;
     padding-bottom: 5em;
 }
@@ -74,12 +81,16 @@ h2 {
 /*Container*/
 
 .container .figure-img {
-    opacity: 0.8;
+    opacity: 0.7;
+    box-shadow: 0 4px 6px var(--dark-font-color), 0 1px 3px var(--light-font-color);
+    border-radius: 4px;
+    transition: all .3s ease;
 }
 
 .container .figure-img:hover {
     opacity: 1;
-    /*todo: zrobić zoom*/
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px var(--light-font-color), 0 3px 6px var(--dark-font-color);
 }
 
 h3 {
@@ -88,24 +99,24 @@ h3 {
 
 .moreBtn {
     font-size: 1.2em;
-    border: 2px solid #D03EC9;
+    border: 2px solid var(--button-color);
     border-radius: 3%;
-    background-color: white;
+    background-color: var(--bg-color);
     transition: all 0.3s ease-in-out;
     padding: 0.7em;
 }
 
 .moreBtn a {
     text-decoration: none;
-    color: #581555;
+    color: var(--dark-font-color);
 }
 
 .moreBtn:hover {
-    background-color: #D03EC9;
+    background-color: var(--button-color);
 }
 
 .moreBtn:hover a {
-    color: white;
+    color: var(--light-font-color);
 }
 
 #friendsText, #scrabbleText, #stopwatchText {
@@ -156,7 +167,7 @@ h3 {
 .fa-linkedin,
 .fa-github-square,
 .fa-envelope-square {
-    color: #581555;
+    color: var(--dark-font-color);
 }
 
 .fa-linkedin:hover,
@@ -172,7 +183,7 @@ footer {
 input {
     display: block;
     font-size: 1em;
-    color: #581555;
+    color: var(--dark-font-color);
     background: none;
     border: none;
     border-bottom: 2px solid white;
@@ -184,7 +195,7 @@ input {
 textarea {
     display: block;
     font-size: 1em;
-    color: #581555;
+    color: var(--dark-font-color);
     background: none;
     border: 2px solid white;
     padding: 3%;
@@ -201,7 +212,7 @@ textarea:invalid, input:invalid  {
 #send {
     background: none;
     text-decoration: none;
-    color: white;
+    color: var(--light-font-color);
     font-size: 1em;
     font-weight: bold;
     width: 25%;
@@ -211,8 +222,8 @@ textarea:invalid, input:invalid  {
 }
 
 #send:hover {
-    background: white;
-    color: #581555;
+    background: var(--bg-color);
+    color: var(--dark-font-color);
     font-weight: bold;
 }
 
